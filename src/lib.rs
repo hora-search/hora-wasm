@@ -42,6 +42,7 @@ macro_rules! inherit_ann_index_method {
                 true
             }
             pub fn add(&mut self, vs: &[f32], idx: $idx_type_expr) -> bool {
+                println!("{:?} {:?}", vs, idx);
                 self._idx.add(&vs, idx).unwrap();
                 true
             }
