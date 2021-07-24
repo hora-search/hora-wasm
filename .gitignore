@@ -3,3 +3,7 @@ node_modules
 /target
 /pkg
 /wasm-pack.log
+Cargo.lock
+/www/node_modules
+/www/package-lock.json
+package-lock.json
