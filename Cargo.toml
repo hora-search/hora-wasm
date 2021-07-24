@@ -23,6 +23,9 @@ cfg-if = "1.0.0"
 wee_alloc = { version = "0.4.2", optional = true }
 real_hora = { package = "hora", path = "../hora"}
 getrandom = { version = "0.2.3", features=["js"]}
+# wasm-bindgen-futures = "0.4.24"
+# wasm-bindgen-rayon = "1.0"
+# rayon = "1.5.1"
 
 [dependencies.web-sys]
 version = "0.3.22"
@@ -35,4 +38,3 @@ console_error_panic_hook = "0.1.5"
 wasm-bindgen-test = "0.3.24"
 futures = "0.3.15"
 js-sys = "0.3.22"
-wasm-bindgen-futures = "0.3.22"
