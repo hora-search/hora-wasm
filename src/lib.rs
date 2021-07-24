@@ -175,10 +175,10 @@ extern "C" {
 
 #[wasm_bindgen]
 pub fn greet() {
-    alert("Hello, wasm-game-of-life!");
+    alert("Hello, hora!");
 }
 
 #[wasm_bindgen]
 pub fn greet2() {
-    alert("Hello, www, wasm-game-of-life!");
+    alert("Hello, www, hora!");
 }
