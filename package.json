@@ -1,7 +1,8 @@
 {
   "author": "aljun",
-  "name": "hora-wasm",
+  "name": "horajs",
   "version": "0.1.0",
+  "maintainers": ["mongkii<mongkii@hotmail.com>"],
   "scripts": {
     "build": "rimraf dist pkg && webpack",
     "start": "rimraf dist pkg && webpack-dev-server --open -d",
