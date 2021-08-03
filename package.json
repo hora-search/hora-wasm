@@ -2,18 +2,25 @@
   "author": "aljun",
   "name": "horajs",
   "version": "0.1.0",
-  "maintainers": ["mongkii<mongkii@hotmail.com>"],
+  "maintainers": [
+    "mongkii<mongkii@hotmail.com>"
+  ],
+  "main": "js/index.js",
   "scripts": {
-    "build": "rimraf dist pkg && webpack",
-    "start": "rimraf dist pkg && webpack-dev-server --open -d",
+    "clean": "rimraf dist pkg",
+    "build": "npm run clean && webpack",
+    "start": "npm run clean && webpack-dev-server --open -d",
     "test": "cargo test && wasm-pack test --headless"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.1.0",
-    "copy-webpack-plugin": "^5.0.3",
+    "rimraf": "^3.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.3",
-    "webpack-dev-server": "^3.7.1",
-    "rimraf": "^3.0.0"
-  }
+    "webpack-dev-server": "^3.7.1"
+  },
+  "files": [
+    "dist",
+    "pkg"
+  ]
 }
