@@ -171,18 +171,3 @@ impl SSGIndexUsize {
         }
     }
 }
-
-#[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, hora!");
-}
-
-#[wasm_bindgen]
-pub fn greet2() {
-    alert("Hello, www, hora!");
-}
