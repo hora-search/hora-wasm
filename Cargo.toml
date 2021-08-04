@@ -14,6 +14,9 @@ crate-type = ["cdylib"]
 [profile.release]
 lto = true
 
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
 [features]
 default = ["wee_alloc"]
 
@@ -21,7 +24,7 @@ default = ["wee_alloc"]
 wasm-bindgen = "0.2.45"
 cfg-if = "1.0.0"
 wee_alloc = { version = "0.4.2", optional = true }
-real_hora = { package = "hora", path = "../hora"}
+real_hora = { package = "hora", version = "0.1.0" }
 getrandom = { version = "0.2.3", features=["js"]}
 # wasm-bindgen-futures = "0.4.24"
 # wasm-bindgen-rayon = "1.0"
