@@ -3,7 +3,8 @@
   "name": "horajs",
   "version": "0.1.0",
   "maintainers": [
-    "mongkii<mongkii@hotmail.com>"
+    "mongkii<mongkii@hotmail.com>",
+    "aljun_invictus<salamer_gaga@163.com>"
   ],
   "main": "js/index.js",
   "scripts": {
@@ -12,8 +13,6 @@
     "start": "npm run clean && webpack-dev-server --open -d",
     "test": "cargo test && wasm-pack test --headless",
     "predemo": "wasm-pack build --release --target web",
-    "demo": "npm run predemo && python3 -m http.server",
-    "begin": "npm run predemo && webpack-dev-server"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.1.0",
