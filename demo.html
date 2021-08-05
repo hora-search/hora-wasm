@@ -5,6 +5,26 @@
     <script type="module">
       import * as horaWasm from './pkg/hora_wasm.js';
       console.log(horaWasm);
+      const demo = () => {
+        const dimension = 50;
+        console.log(horaWasm.BruteForceIndexUsize);
+      
+        var bf_idx = horaWasm.BruteForceIndexUsize.new(dimension);
+        for (var i = 0; i < 1000; i++) {
+          var feature = [];
+          for (var j = 0; j < dimension; j++) {
+            feature.push(Math.random());
+          }
+          bf_idx.add(feature, i); // add point 
+        }
+        bf_idx.build("euclidean"); // build index
+        var feature = [];
+        for (var j = 0; j < dimension; j++) {
+          feature.push(Math.random());
+        }
+        console.log("bf result",  bf_idx.search(feature, 10)); //bf result Uint32Array(10) [704, 113, 358, 835, 408, 379, 117, 414, 808, 826]
+      }
+      demo();
     </script>
   </body>
 </html>

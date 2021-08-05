@@ -3,9 +3,9 @@ extern crate wasm_bindgen;
 
 use cfg_if::cfg_if;
 use real_hora::core::ann_index::ANNIndex;
-use real_hora::core::ann_index::SerializableIndex;
+
 use real_hora::core::metrics;
-use real_hora::core::node;
+
 use wasm_bindgen::prelude::*;
 // use rayon::prelude::*;
 // pub use wasm_bindgen_rayon::init_thread_pool;
