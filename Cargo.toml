@@ -1,11 +1,10 @@
-# You must change these to your own details.
 [package]
 authors = ["aljun <gagasalamer@outlook.com>"]
 edition = "2018"
 license = "Apache-2.0"
-name = "hora-wasm"
+name = "horajs"
 readme = "README.md"
-version = "0.1.0"
+version = "0.1.2"
 
 description = "Hora Search Everywhere"
 homepage = "https://horasearch.com"
