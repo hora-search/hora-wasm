@@ -1,12 +1,18 @@
 # You must change these to your own details.
 [package]
-name = "hora-wasm"
-description = "javascript binding for hora"
-version = "0.1.0"
 authors = ["aljun <gagasalamer@outlook.com>"]
-categories = ["wasm"]
-readme = "README.md"
 edition = "2018"
+license = "Apache-2.0"
+name = "hora-wasm"
+readme = "README.md"
+version = "0.1.0"
+
+description = "Hora Search Everywhere"
+homepage = "https://horasearch.com"
+repository = "https://github.com/hora-search/hora-wasm"
+
+categories = ["algorithms", "data-structures", "wasm"]
+keywords = ["intelligence", "neighbor", "SIMD", "search", "distance"]
 
 [lib]
 crate-type = ["cdylib"]
@@ -21,18 +27,16 @@ wasm-opt = false
 default = ["wee_alloc"]
 
 [dependencies]
-wasm-bindgen = "0.2.75"
 cfg-if = "1.0.0"
-wee_alloc = { version = "0.4.5", optional = true }
-real_hora = { package = "hora", version = "0.1.0" }
-getrandom = { version = "0.2.3", features=["js"]}
+getrandom = {version = "0.2.3", features = ["js"]}
+rayon = "1.5.1"
+real_hora = {package = "hora", version = "0.1.0"}
+wasm-bindgen = "0.2.75"
 wasm-bindgen-futures = "0.4.25"
 wasm-bindgen-rayon = "1.0.3"
-rayon = "1.5.1"
-
-
+wee_alloc = {version = "0.4.5", optional = true}
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.25"
 futures = "0.3.16"
 js-sys = "0.3.52"
+wasm-bindgen-test = "0.3.25"
