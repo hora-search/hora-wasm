@@ -1,15 +1,16 @@
 extern crate cfg_if;
+extern crate console_error_panic_hook;
 extern crate wasm_bindgen;
+use std::panic;
+pub use wasm_bindgen_rayon::init_thread_pool;
 
 use cfg_if::cfg_if;
 use real_hora::core::ann_index::ANNIndex;
 
 use real_hora::core::metrics;
 
+use rayon::prelude::*;
 use wasm_bindgen::prelude::*;
-// use rayon::prelude::*;
-// pub use wasm_bindgen_rayon::init_thread_pool;
-
 
 cfg_if! {
     if #[cfg(feature = "wee_alloc")] {
@@ -80,7 +81,6 @@ impl BruteForceIndexUsize {
 inherit_ann_index_method!(HNSWIndexUsize, real_hora::index::hnsw_idx::HNSWIndex<f32, usize>,usize);
 #[wasm_bindgen]
 impl HNSWIndexUsize {
-
     pub fn new(
         dimension: usize,
         max_item: usize,
@@ -108,7 +108,6 @@ impl HNSWIndexUsize {
 inherit_ann_index_method!(PQIndexUsize, real_hora::index::pq_idx::PQIndex<f32, usize>,usize);
 #[wasm_bindgen]
 impl PQIndexUsize {
-
     pub fn new(dimension: usize, n_sub: usize, sub_bits: usize, train_epoch: usize) -> Self {
         PQIndexUsize {
             _idx: Box::new(real_hora::index::pq_idx::PQIndex::<f32, usize>::new(
@@ -170,4 +169,9 @@ impl SSGIndexUsize {
             )),
         }
     }
+}
+
+#[wasm_bindgen]
+pub fn init_env() {
+    panic::set_hook(Box::new(console_error_panic_hook::hook));
 }

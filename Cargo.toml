@@ -35,8 +35,9 @@ rayon = "1.5.1"
 real_hora = {package = "hora", version = "0.1.0"}
 wasm-bindgen = "0.2.75"
 wasm-bindgen-futures = "0.4.25"
-wasm-bindgen-rayon = "1.0.3"
+wasm-bindgen-rayon = { version = "1.0.3", features = ["no-bundler"] }
 wee_alloc = {version = "0.4.5", optional = true}
+console_error_panic_hook = "0.1.6"
 
 [dev-dependencies]
 futures = "0.3.16"
