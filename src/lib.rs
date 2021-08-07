@@ -1,15 +1,10 @@
 extern crate cfg_if;
 extern crate console_error_panic_hook;
 extern crate wasm_bindgen;
-use std::panic;
-pub use wasm_bindgen_rayon::init_thread_pool;
-
 use cfg_if::cfg_if;
 use real_hora::core::ann_index::ANNIndex;
-
 use real_hora::core::metrics;
-
-use rayon::prelude::*;
+use std::panic;
 use wasm_bindgen::prelude::*;
 
 cfg_if! {
@@ -46,7 +41,6 @@ macro_rules! inherit_ann_index_method {
                 true
             }
             pub fn add(&mut self, vs: &[f32], idx: $idx_type_expr) -> bool {
-                println!("{:?} {:?}", vs, idx);
                 self._idx.add(&vs, idx).unwrap();
                 true
             }
