@@ -12,7 +12,7 @@
     "build": "npm run clean && webpack",
     "start": "npm run clean && webpack-dev-server --open -d",
     "test": "cargo test && wasm-pack test --headless",
-    "predemo": "wasm-pack build --release --target web",
+    "predemo": "wasm-pack build --release --target web"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.1.0",
